@@ -2,7 +2,6 @@
 decision_count = 0
 
 def print_one_decision(Tab, N):
-	Decision = [0] * N
 	for y in range(N):
 		for x in range(N):
 			if (Tab[y][x]):
@@ -14,12 +13,8 @@ def is_safe_diagonal(Tab, x, y, N):
 	y1 = y
 
 	for x, y in zip(list(range(x, -1, -1)), list(range(y, -1, -1))):
-		pass
-	for x, y in zip(list(range(x, N)), list(range(y, N))):
 		if (Tab[y][x]):
 			return (False)
-	for x1, y1 in zip(list(range(x1, -1, -1)), list(range(y1, N - 1))):
-		pass
 	for x1, y1 in zip(list(range(x1, N)), list(range(y1, -1, -1))):
 		if (Tab[y1][x1]):
 			return (False)
@@ -56,7 +51,7 @@ def eight_queens(Tab, y, N):
 def main():
 	global decision_count
 
-	N = 13
+	N = 4
 	Tab = [[False] * N for y in range(N)]
 	print("There are all posible solutions below:")
 	eight_queens(Tab, 0, N)
